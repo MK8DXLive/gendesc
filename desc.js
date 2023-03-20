@@ -1,36 +1,35 @@
 window.onload = function () {
-    document.getElementById("source").value = `
-<tr>
-    <td>2020-02-22</td>
-    <td><a href = "https://www.youtube.com/watch?v=SIIrUHDdocE" target="_blank">1'21"481</a></td>
-    <td><a href = "profile.php?player=Matt">Matt</a></td>
-    <td><center><img alt = "Canada" title = "Canada" src = "../country-flags/CA.png"></center></td>
-    <td>467</td>
-    <td>28.386</td>
-    <td>26.632</td>
-    <td>26.463</td>
-    <td>7-3-0</td>
+    document.getElementById("source").value = `<tr>
+    <td>2023-03-09</td>
+    <td>1'34"555 <img src="motion.png?2" title="Hybrid Controls Used" style="vertical-align:bottom"></td>
+    <td><a href = "profile.php?player=Byron">Byron</a></td>
+    <td><center><img alt = "Australia" title = "Australia" src = "../country-flags/AU.png"></center></td>
+    <td><1</td>
+    <td>32.908</td>
+    <td>30.859</td>
+    <td>30.788</td>
+    <td>8-2-0</td>
     <td>1-1-1</td>
-    <td>Wario</td>
-    <td>Biddybuggy</td>
-    <td>Button</td>
-    <td>Cloud Glider</td>
+    <td>King Boo<a href="patchinfo.php"><img src="buff.png" title="Stats Buffed from Version 2.3.0" style="vertical-align:bottom"></a></td>
+    <td>Cat Cruiser<a href="patchinfo.php"><img src="buff.png" title="Stats Buffed from Version 2.3.0" style="vertical-align:bottom"></a></td>
+    <td>Cushion<a href="patchinfo.php"><img src="buff.png" title="Stats Buffed from Version 2.3.0" style="vertical-align:bottom"></a></td>
+    <td>Paper Glider</td>
 </tr>
 <tr>
-    <td>2021-06-03</td>
-    <td>1'21"478</td>
-    <td><a href = "profile.php?player=Technical">Technical</a></td>
-    <td><center><img alt = "USA" title = "USA" src = "../country-flags/US.png"></center></td>
-    <td>1</td>
-    <td>28.348</td>
-    <td>26.633</td>
-    <td>26.497</td>
-    <td>7-3-0</td>
+    <td>2023-03-09</td>
+    <td><a href = "https://www.youtube.com/watch?v=pvzIBVivanw" target="_blank">1'34"503</a> <img src="motion.png?2" title="Hybrid Controls Used" style="vertical-align:bottom"></td>
+    <td><a href = "profile.php?player=Byron">Byron</a></td>
+    <td><center><img alt = "Australia" title = "Australia" src = "../country-flags/AU.png"></center></td>
+    <td>11</td>
+    <td>32.925</td>
+    <td>30.880</td>
+    <td>30.698</td>
+    <td>8-2-0</td>
     <td>1-1-1</td>
-    <td>Wario</td>
-    <td>Biddybuggy</td>
-    <td>Button</td>
-    <td>Parachute</td>
+    <td>Link<a href="patchinfo.php"><img src="buff.png" title="Stats Buffed from Version 2.3.0" style="vertical-align:bottom"></a></td>
+    <td>Cat Cruiser<a href="patchinfo.php"><img src="buff.png" title="Stats Buffed from Version 2.3.0" style="vertical-align:bottom"></a></td>
+    <td>Cushion<a href="patchinfo.php"><img src="buff.png" title="Stats Buffed from Version 2.3.0" style="vertical-align:bottom"></a></td>
+    <td>Paper Glider</td>
 </tr>`;
 }
 
@@ -139,8 +138,12 @@ function parseText() {
                 }
             } else if (q == 3) {
                 ele.push(src[p].trim().match(/<td.*><center><img alt\s*=\s*\"(.+)\" title.+><\/center><\/td>/)[1]);
-            } else {
-                ele.push(src[p].trim().match(/<td.*>(.+)<\/td>/)[1]);
+            } else { // q=0,4,5,6...
+                if (src[p].trim().match(/<td.*>.+<a .+>.+<\/a><\/td>/)) { // including star icon
+                    ele.push(src[p].trim().match(/<td.*>(.+)<a .+>.+<\/a><\/td>/)[1]);
+                } else {
+                    ele.push(src[p].trim().match(/<td.*>(.+)<\/td>/)[1]);
+                }
             }
             q++;
         }
