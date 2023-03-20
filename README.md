@@ -1,8 +1,11 @@
 # Description Generator for MK8DXRecords (HTML Version)
 
 ## About
-- https://mk8dxlive.github.io/gendesc/
-- https://rod-tav.github.io/gendesc/
+- (HTML Version)
+  - https://mk8dxlive.github.io/gendesc/
+  - https://rod-tav.github.io/gendesc/
+- (Chrome Extension Version)
+  - https://github.com/MK8DXLive/gendesc_chrome
 - This tool can automatically generate descriptions for [MK8DXRecords](https://www.youtube.com/channel/UC_292L5mAJowD4LCCNZRbHg) videos.
 (indicated by red box)
 
