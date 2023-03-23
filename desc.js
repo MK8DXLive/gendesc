@@ -241,7 +241,7 @@ Splits: ${this.printLap()}
 Mushrooms: ${this.printShroom()}
 Coins: ${this.printCoin()}
 
-Player's WR profile: https://mkwrs.com/mk8dx/profile.php?player=${this.player}
+Player's WR profile: https://mkwrs.com/mk8dx/profile.php?player=${this.player.replace(/ /g,"%20")}
 
 See all the current and past WRs for MK8DX at : https://mkwrs.com/mk8dx
 See various top 10 leaderboards for MK8DX at : http://mkleaderboards.com/
